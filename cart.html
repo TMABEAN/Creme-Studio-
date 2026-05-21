@@ -1,39 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Cart — Cremè Studio</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Playfair+Display:ital,wght@0,400;1,400&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="styles/main.css" />
   <link rel="stylesheet" href="styles/cart.css" />
 </head>
+
 <body>
 
-   <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="navbar__logo">
-            <a href="index.html">Cremè Studio</a>
-        </div>
+  <!-- NAVBAR -->
+  <nav class="navbar">
 
-        <ul class="navbar__links">
-            <li><a href="sessions.html">Sessions</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="recipes.html">Recipes</a></li>
+    <div class="navbar__logo">
+      <a href="index.html">Cremè Studio</a>
+    </div>
 
-        <!-- Cart icon : Claude.ai -->
-          <a href="cart.html" class="navbar__cart" aria-label="Cart">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
-              <line x1="3" y1="6" x2="21" y2="6"/>
-              <path d="M16 10a4 4 0 01-8 0"/>
-            </svg>
-          </a>
-        </ul>
- 
-    </nav>
+    <ul class="navbar__links">
+      <li><a href="sessions.html">Sessions</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="recipes.html">Recipes</a></li>
+    </ul>
+
+    <a href="cart.html" class="navbar__cart" aria-label="Cart">
+      <!-- Cart icon : Claude.ai -->
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <path d="M16 10a4 4 0 01-8 0"></path>
+      </svg>
+    </a>
+
+  </nav>
 
   <!-- CART HERO -->
   <section class="cart-hero">
@@ -51,102 +58,40 @@
 
   <!-- CART CONTENT -->
   <main class="cart-main">
+
     <div class="cart-main__inner">
 
       <!-- LEFT: Shopping cart -->
       <div class="cart-left">
-        <a href="#" class="cart-back">&#8249; Shopping Continue</a>
+
+        <a href="shop.html" class="cart-back">&#8249; Shopping Continue</a>
+
         <hr class="cart-divider" />
 
         <h2 class="cart-title">Shopping cart</h2>
-        <p class="cart-subtitle">You have <strong>3 items</strong> in your <strong>Fresh Bakery</strong> cart.</p>
 
-        <!-- Cart items -->
-        <div class="cart-items" id="cartItems">
+        <p class="cart-subtitle">
+          You have <strong id="cartCount">0 items</strong> in your <strong>Fresh Bakery</strong> cart.
+        </p>
 
-          <div class="cart-item" data-id="1">
-            <div class="cart-item__img">
-              <img src="images/tiramisu.jpg" alt="Tiramisu" />
-            </div>
-            <div class="cart-item__info">
-              <p class="cart-item__name">Tiramisu</p>
-              <p class="cart-item__desc">Extra cheese and toping</p>
-            </div>
-            <div class="cart-item__qty">
-              <button class="qty-btn qty-btn--up" onclick="changeQty(1, 1)">&#8679;</button>
-              <span class="qty-value" id="qty-1">1</span>
-              <button class="qty-btn qty-btn--down" onclick="changeQty(1, -1)">&#8681;</button>
-            </div>
-            <p class="cart-item__price">SEK 100</p>
-            <button class="cart-item__delete" onclick="deleteItem(1)">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="3 6 5 6 21 6"/>
-                <path d="M19 6l-1 14H6L5 6"/>
-                <path d="M10 11v6M14 11v6"/>
-                <path d="M9 6V4h6v2"/>
-              </svg>
-            </button>
-          </div>
+        <!-- JS will add cart items here -->
+        <div class="cart-items" id="cartItems"></div>
 
-          <div class="cart-item" data-id="2">
-            <div class="cart-item__img">
-              <img src="images/tiramisu.jpg" alt="Tiramisu" />
-            </div>
-            <div class="cart-item__info">
-              <p class="cart-item__name">Tiramisu</p>
-              <p class="cart-item__desc">Extra cheese and toping</p>
-            </div>
-            <div class="cart-item__qty">
-              <button class="qty-btn qty-btn--up" onclick="changeQty(2, 1)">&#8679;</button>
-              <span class="qty-value" id="qty-2">1</span>
-              <button class="qty-btn qty-btn--down" onclick="changeQty(2, -1)">&#8681;</button>
-            </div>
-            <p class="cart-item__price">SEK 100</p>
-            <button class="cart-item__delete" onclick="deleteItem(2)">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="3 6 5 6 21 6"/>
-                <path d="M19 6l-1 14H6L5 6"/>
-                <path d="M10 11v6M14 11v6"/>
-                <path d="M9 6V4h6v2"/>
-              </svg>
-            </button>
-          </div>
+        <button class="cart-clear-btn">
+          Clear Cart &#8594;
+        </button>
 
-          <div class="cart-item" data-id="3">
-            <div class="cart-item__img">
-              <img src="images/tiramisu.jpg" alt="Tiramisu" />
-            </div>
-            <div class="cart-item__info">
-              <p class="cart-item__name">Tiramisu</p>
-              <p class="cart-item__desc">Extra garlic</p>
-            </div>
-            <div class="cart-item__qty">
-              <button class="qty-btn qty-btn--up" onclick="changeQty(3, 1)">&#8679;</button>
-              <span class="qty-value" id="qty-3">1</span>
-              <button class="qty-btn qty-btn--down" onclick="changeQty(3, -1)">&#8681;</button>
-            </div>
-            <p class="cart-item__price">SEK 100</p>
-            <button class="cart-item__delete" onclick="deleteItem(3)">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="3 6 5 6 21 6"/>
-                <path d="M19 6l-1 14H6L5 6"/>
-                <path d="M10 11v6M14 11v6"/>
-                <path d="M9 6V4h6v2"/>
-              </svg>
-            </button>
-          </div>
-
-        </div>
-
-        <button class="cart-clear-btn">Clear Cart &#8594;</button>
       </div>
 
       <!-- RIGHT: Card Details -->
       <div class="cart-right">
+
         <div class="card-details">
+
           <h3 class="card-details__title">Card Details</h3>
 
           <p class="card-details__label">Card type</p>
+
           <div class="card-details__types">
             <img src="images/mastercard.png" alt="Mastercard" />
             <img src="images/visa.png" alt="Visa" />
@@ -154,76 +99,125 @@
           </div>
 
           <div class="card-details__form">
+
             <input type="text" placeholder="Name on card" class="card-input" />
+
             <input type="text" placeholder="011 2222 3333 4444" class="card-input" />
+
             <div class="card-details__row">
               <input type="text" placeholder="mm/yy" class="card-input" />
               <input type="text" placeholder="123" class="card-input" />
             </div>
+
           </div>
 
           <hr class="card-details__divider" />
 
           <div class="card-details__summary">
+
             <div class="card-details__row-text">
               <span>Subtotal</span>
-              <span id="subtotal">SEK 300</span>
+              <span id="subtotal">SEK 0</span>
             </div>
+
             <div class="card-details__row-text">
               <span>Shipping</span>
               <span>Free</span>
             </div>
+
             <div class="card-details__row-text card-details__total">
               <span>Total (Tax incl.)</span>
-              <span id="total">SEK 300</span>
+              <span id="total">SEK 0</span>
             </div>
+
           </div>
 
-          <button class="card-details__pay-btn">Pay Now &#8594;</button>
+          <button class="card-details__pay-btn">
+            Pay Now &#8594;
+          </button>
+
         </div>
+
       </div>
 
     </div>
+
   </main>
 
   <!-- FOOTER -->
   <footer class="footer">
+
     <div class="footer__grid">
+
       <div class="footer__col">
         <h4 class="footer__heading">Welcome to Cremè Studio</h4>
-        <p class="footer__text">Cremè Studio since 2022, is dedicated to all those who love to bake and experience. We invite you on a wholesome culinary adventure.</p>
+
+        <p class="footer__text">
+          Cremè Studio since 2022, is dedicated to all those who love to bake and experience.
+          We invite you on a wholesome culinary adventure.
+        </p>
       </div>
+
       <div class="footer__col">
         <h4 class="footer__heading">Visit</h4>
-        <p class="footer__text">317 Pacific C Hwy<br/>Huntington, CA 92648</p>
-        <br/>
+
+        <p class="footer__text">
+          317 Pacific C Hwy<br />
+          Huntington, CA 92648
+        </p>
+
+        <br />
+
         <h4 class="footer__heading">Talk</h4>
         <p class="footer__text">123.456-7</p>
-        <br/>
+
+        <br />
+
         <h4 class="footer__heading">Write</h4>
         <p class="footer__text">bake@cremestudio.com</p>
       </div>
+
       <div class="footer__col">
         <h4 class="footer__heading">Hours</h4>
-        <p class="footer__text">Monday thru Friday<br/>11am – 9pm<br/><br/>Saturday/Sunday<br/>10am – 11pm</p>
+
+        <p class="footer__text">
+          Monday thru Friday<br />
+          11am – 9pm<br /><br />
+          Saturday/Sunday<br />
+          10am – 11pm
+        </p>
       </div>
+
       <div class="footer__col">
         <h4 class="footer__heading">About</h4>
-        <p class="footer__text">FAQ<br/>Reservation Policy<br/>Privacy Policy<br/>Health & Safety</p>
-        <br/>
+
+        <p class="footer__text">
+          FAQ<br />
+          Reservation Policy<br />
+          Privacy Policy<br />
+          Health & Safety
+        </p>
+
+        <br />
+
         <h4 class="footer__heading">Follow Along</h4>
+
         <div class="footer__social">
           <a href="#">IG</a>
           <a href="#">FB</a>
           <a href="#">TK</a>
         </div>
       </div>
+
     </div>
+
     <div class="footer__bottom">
       <p>© 2024 Cremè Studio. All rights reserved.</p>
     </div>
+
   </footer>
 
   <script src="js/cart.js"></script>
+
 </body>
 </html>
