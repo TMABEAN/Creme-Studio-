@@ -1,40 +1,79 @@
-// Quantity change
-function changeQty(id, delta) {
-  const el = document.getElementById(`qty-${id}`);
-  let val = parseInt(el.textContent) + delta;
-  if (val < 1) val = 1;
-  el.textContent = val;
-  updateTotal();
+const cartContainer = document.getElementById('cartItems');
+const subtotalText = document.getElementById('subtotal');
+const totalText = document.getElementById('total');
+const cartCount = document.getElementById('cartCount');
+
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+let total = 0;
+let itemCount = 0;
+
+cartContainer.innerHTML = '';
+
+if (cart.length === 0) {
+  cartContainer.innerHTML = '<p class="cart-empty">Your cart is empty.</p>';
 }
 
-// Delete item
-function deleteItem(id) {
-  const item = document.querySelector(`.cart-item[data-id="${id}"]`);
-  if (item) {
-    item.style.opacity = '0';
-    item.style.transition = 'opacity 0.3s ease';
-    setTimeout(() => { item.remove(); updateTotal(); }, 300);
+cart.forEach(function(item, index) {
+  total = total + item.price * item.quantity;
+  itemCount = itemCount + item.quantity;
+
+  cartContainer.innerHTML += `
+    <div class="cart-item">
+
+      <div class="cart-item__img">
+        <img src="${item.image}" alt="${item.name}">
+      </div>
+
+      <div class="cart-item__info">
+        <p class="cart-item__name">${item.name}</p>
+        <p class="cart-item__desc">Fresh bakery item</p>
+      </div>
+
+      <div class="cart-item__qty">
+        <button class="qty-btn qty-btn--up" onclick="updateQty(${index}, 1)">↑</button>
+        <span class="qty-value">${item.quantity}</span>
+        <button class="qty-btn qty-btn--down" onclick="updateQty(${index}, -1)">↓</button>
+      </div>
+
+      <p class="cart-item__price">SEK ${item.price * item.quantity}</p>
+
+      <button class="cart-item__delete" onclick="deleteItem(${index})">
+        Remove
+      </button>
+
+    </div>
+  `;
+});
+
+subtotalText.innerText = 'SEK ' + total;
+totalText.innerText = 'SEK ' + total;
+cartCount.innerText = itemCount + ' items';
+
+function updateQty(index, amount) {
+  cart[index].quantity = cart[index].quantity + amount;
+
+  if (cart[index].quantity < 1) {
+    cart[index].quantity = 1;
   }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  location.reload();
 }
 
-// Update total
-function updateTotal() {
-  const items = document.querySelectorAll('.cart-item');
-  let total = 0;
-  items.forEach(item => {
-    const id = item.dataset.id;
-    const qty = parseInt(document.getElementById(`qty-${id}`)?.textContent || 0);
-    total += qty * 100;
-  });
-  document.getElementById('subtotal').textContent = `SEK ${total}`;
-  document.getElementById('total').textContent = `SEK ${total}`;
+function deleteItem(index) {
+  cart.splice(index, 1);
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  location.reload();
 }
 
-// Tabs
-const tabs = document.querySelectorAll('.cart-tab');
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('cart-tab--active'));
-    tab.classList.add('cart-tab--active');
-  });
+const clearButton = document.querySelector('.cart-clear-btn');
+
+clearButton.addEventListener('click', function() {
+  localStorage.removeItem('cart');
+
+  location.reload();
 });
