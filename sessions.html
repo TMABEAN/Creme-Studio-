@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sessions — Cremè Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Playfair+Display:ital,wght@0,400;1,400&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/sessions.css" />
+</head>
+<body>
+
+   <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <a href="index.html">Cremè Studio</a>
+        </div>
+
+        <ul class="navbar__links">
+            <li><a href="sessions.html">Sessions</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+
+        <!-- Cart icon : Claude.ai -->
+          <a href="cart.html" class="navbar__cart" aria-label="Cart">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 01-8 0"/>
+            </svg>
+          </a>
+        </ul>
+ 
+    </nav>
+
+  <!-- SESSIONS -->
+  <section class="sessions">
+
+    <button class="sessions__arrow sessions__arrow--left" id="arrowLeft">&#8592;</button>
+    <button class="sessions__arrow sessions__arrow--right" id="arrowRight">&#8594;</button>
+
+    <div class="sessions__track" id="sessionsTrack">
+
+      <div class="sessions__panorama">
+        <img src="images/sessions-panorama.png" alt="Sessions" />
+      </div>
+
+      <div class="sessions__content">
+
+        <div class="sessions__panel open-session" data-panel="0">
+          <div class="sessions__inner">
+            <p class="sessions__label">A place all yours</p>
+            <h2 class="sessions__title">Open<br/>Session</h2>
+            <p class="sessions__text">A flexible baking experience where you can freely create at your own pace using a fully equipped space and prepared ingredients — no guidance required.</p>
+            <a href="booking.html" class="sessions__btn sessions__btn--selected">Book Your Session</a>
+          </div>
+        </div>
+
+        <div class="sessions__panel main-session" data-panel="1">
+          <div class="sessions__inner">
+            <p class="sessions__label">A place all yours</p>
+            <h2 class="sessions__title">Sessions</h2>
+            <p class="sessions__text">Whether you're a beginner or a seasoned baker, Cremè Studio offers a space for everyone. Choose your own experience — bake freely or learn step by step with our team.</p>
+          </div>
+        </div>
+
+        <div class="sessions__panel guided-session" data-panel="2">
+          <div class="sessions__inner">
+            <p class="sessions__label">A place all yours</p>
+            <h2 class="sessions__title">Guided<br/>Session</h2>
+            <p class="sessions__text">Bake with confidence through a guided, step-by-step experience — everything prepared, with support along the way.</p>
+            <a href="booking.html" class="sessions__btn sessions__btn--selected">Book Your Session</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="sessions__indicators">
+      <button class="sessions__indicator" data-index="0"></button>
+      <button class="sessions__indicator" data-index="1"></button>
+      <button class="sessions__indicator" data-index="2"></button>
+    </div>
+
+  </section>
+
+  <!-- STUDIO GALLERY -->
+<section class="studio-gallery">
+  <div class="studio-gallery__header">
+    <p class="studio-gallery__label">Take a look inside</p>
+    <h2 class="studio-gallery__title">Our Studio Space</h2>
+  </div>
+
+  <div class="studio-gallery__track">
+    <div class="studio-gallery__item">
+      <img src="images/studio-1.jpg" alt="Studio space" />
+    </div>
+    <div class="studio-gallery__item">
+      <img src="images/studio-2.jpg" alt="Studio space" />
+    </div>
+    <div class="studio-gallery__item">
+      <img src="images/studio-3.jpg" alt="Studio space" />
+    </div>
+    <div class="studio-gallery__item">
+      <img src="images/studio-4.jpg" alt="Studio space" />
+    </div>
+    <div class="studio-gallery__item">
+      <img src="images/studio-5.jpg" alt="Studio space" />
+    </div>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <h4 class="footer__heading">Welcome to Cremè Studio</h4>
+        <p class="footer__text">Cremè Studio is a local bakery space offering classes in baking, cooking, and art. We provide fresh ingredients and a welcoming atmosphere where customers enjoy making their own food.</p>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Visit</h4>
+        <p class="footer__text">123 Studio Street<br/>Copenhagen, Denmark</p>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Hours</h4>
+        <p class="footer__text">Monday - Friday<br/>9am - 6pm<br/><br/>Saturday - Sunday<br/>10am - 4pm</p>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Follow us</h4>
+        <div class="footer__social">
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">TikTok</a>
+          <a href="#">Pinterest</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2024 Cremè Studio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/sessions.js"></script>
+</body>
+</html>
