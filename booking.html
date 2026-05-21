@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Session — Cremè Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Playfair+Display:ital,wght@0,400;1,400&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/booking.css" />
+</head>
+<body>
+
+   <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <a href="index.html">Cremè Studio</a>
+        </div>
+
+        <ul class="navbar__links">
+            <li><a href="sessions.html">Sessions</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+
+        <!-- Cart icon : Claude.ai -->
+          <a href="cart.html" class="navbar__cart" aria-label="Cart">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 01-8 0"/>
+            </svg>
+          </a>
+        </ul>
+ 
+    </nav>
+
+  <!-- HERO BG -->
+  <div class="booking-hero">
+   <div class="booking-hero__bg"></div>
+
+    <!-- COMPARISON TABLE -->
+    <div class="booking-table">
+      <div class="booking-table__inner">
+        <div class="booking-table__col booking-table__col--header"></div>
+        <div class="booking-table__col booking-table__col--header">Guided Class</div>
+        <div class="booking-table__col booking-table__col--header">Studio Session</div>
+
+        <div class="booking-table__col booking-table__label">Instructor</div>
+        <div class="booking-table__col">✓</div>
+        <div class="booking-table__col">✗</div>
+
+        <div class="booking-table__col booking-table__label">Book by Recipe</div>
+        <div class="booking-table__col">✓</div>
+        <div class="booking-table__col">✓</div>
+
+        <div class="booking-table__col booking-table__label">Ingredients</div>
+        <div class="booking-table__col">✓</div>
+        <div class="booking-table__col">✓</div>
+
+        <div class="booking-table__col booking-table__label">Tools</div>
+        <div class="booking-table__col">✓</div>
+        <div class="booking-table__col">✓</div>
+
+        <div class="booking-table__col booking-table__label">Duration</div>
+        <div class="booking-table__col">2–3 Hours</div>
+        <div class="booking-table__col">2–4 Hours</div>
+
+        <div class="booking-table__col booking-table__label">Group Size</div>
+        <div class="booking-table__col">4–6 People</div>
+        <div class="booking-table__col">1–5 People</div>
+
+        <div class="booking-table__col booking-table__label">Best For</div>
+        <div class="booking-table__col">Beginners, Casual Bakers</div>
+        <div class="booking-table__col">Solo Bakers, DIY Bakers</div>
+
+        <div class="booking-table__col booking-table__label">Starting Price</div>
+        <div class="booking-table__col">490kr/person</div>
+        <div class="booking-table__col">350kr/2h</div>
+      </div>
+    </div>
+
+    <!-- BOOKING FORM -->
+    <div class="booking-form-wrap">
+      <p class="booking-form__label">Enjoy an unforgettable experience</p>
+      <h2 class="booking-form__title">Book your Table</h2>
+
+      <div class="booking-form__hours">
+        <span><strong>Opening Times</strong></span>
+        <span>Monday – Friday: 9am – 9pm</span>
+        <span>Saturday/Sunday: 11am – 8pm</span>
+      </div>
+
+      <form class="booking-form" id="bookingForm">
+
+        <div class="booking-form__field">
+          <label>Your Name *</label>
+          <input type="text" placeholder="" required />
+        </div>
+
+        <div class="booking-form__field">
+          <label>Your Email *</label>
+          <input type="email" placeholder="" required />
+        </div>
+
+        <div class="booking-form__field">
+          <label>Date *</label>
+          <input type="date" required />
+        </div>
+
+        <div class="booking-form__field">
+        <label>Type of Sessions *</label>
+        <select required>
+            <option value="" disabled selected>Choose a session</option>
+            <option value="open">Open Session</option>
+            <option value="guided">Guided Class</option>        </select>
+        </div>
+
+        <div class="booking-form__field">
+          <label>Dish *</label>
+          <input type="text" placeholder="" required />
+        </div>
+
+        <div class="booking-form__field">
+          <label>Time *</label>
+          <div class="booking-form__times">
+            <label class="time-option">
+              <input type="radio" name="time" value="17:00" /> 17:00
+            </label>
+            <label class="time-option">
+              <input type="radio" name="time" value="17:30" /> 17:30
+            </label>
+            <label class="time-option">
+              <input type="radio" name="time" value="18:00" /> 18:00
+            </label>
+            <label class="time-option">
+              <input type="radio" name="time" value="18:30" /> 18:30
+            </label>
+            <label class="time-option">
+              <input type="radio" name="time" value="19:00" /> 19:00
+            </label>
+            <label class="time-option">
+              <input type="radio" name="time" value="19:30" /> 19:30
+            </label>
+            <label class="time-option">
+              <input type="radio" name="time" value="20:30" /> 20:30
+            </label>
+          </div>
+        </div>
+
+        <div class="booking-form__field">
+          <label>Number of People *</label>
+          <input type="number" min="1" max="10" placeholder="" required />
+        </div>
+
+        <div class="booking-form__field">
+          <label>Your Message *</label>
+          <textarea rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="booking-form__btn">Send</button>
+
+      </form>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <h4 class="footer__heading">Welcome to Cremè Studio</h4>
+        <p class="footer__text">Cremè Studio since 2022, is dedicated to all those who love to bake and experience. We invite you on a wholesome culinary adventure.</p>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Visit</h4>
+        <p class="footer__text">317 Pacific C Hwy<br/>Huntington, CA 92648</p>
+        <br/>
+        <h4 class="footer__heading">Talk</h4>
+        <p class="footer__text">123.456-7</p>
+        <br/>
+        <h4 class="footer__heading">Write</h4>
+        <p class="footer__text">bake@cremestudio.com</p>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Hours</h4>
+        <p class="footer__text">Monday thru Friday<br/>11am – 9pm<br/><br/>Saturday/Sunday<br/>10am – 11pm</p>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">About</h4>
+        <p class="footer__text">FAQ<br/>Reservation Policy<br/>Privacy Policy<br/>Health & Safety</p>
+        <br/>
+        <h4 class="footer__heading">Follow Along</h4>
+        <div class="footer__social">
+          <a href="#">IG</a>
+          <a href="#">FB</a>
+          <a href="#">TK</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2024 Cremè Studio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>
