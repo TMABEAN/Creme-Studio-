@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Shop — Cremè Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Playfair+Display:ital,wght@0,400;1,400&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/shop.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar__logo">
+      <a href="index.html">Cremè Studio</a>
+    </div>
+
+    <ul class="navbar__links">
+      <li><a href="sessions.html">Sessions</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="recipes.html">Recipes</a></li>
+    </ul>
+
+    <a href="cart.html" class="navbar__cart" aria-label="Cart">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <path d="M16 10a4 4 0 01-8 0"></path>
+      </svg>
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="shop-hero">
+    <p class="shop-hero__label">Find all your needs</p>
+    <h1 class="shop-hero__title">Bakery Shop</h1>
+  </section>
+
+  <!-- TABS -->
+  <div class="shop-tabs">
+    <button class="shop-tab" data-tab="ingredients">Ingredients</button>
+    <button class="shop-tab shop-tab--active" data-tab="bakery">Fresh Bakery</button>
+    <button class="shop-tab" data-tab="tools">Tools</button>
+  </div>
+
+  <!-- PRODUCTS GRID -->
+  <main class="shop-main">
+    <div class="shop-grid" id="shopGrid">
+
+      <!-- PRODUCT 1 -->
+      <div class="product-card" data-name="Tiramisu" data-price="100" data-image="images/tiramisu.jpg">
+        <div class="product-card__img">
+          <img src="images/tiramisu.jpg" alt="Tiramisu — Italian comfort dessert" />
+        </div>
+
+        <div class="product-card__info">
+          <h3 class="product-card__name">Tiramisu</h3>
+          <p class="product-card__price">SEK 100</p>
+          <p class="product-card__desc">Italian comfort dessert with mascarpone cheese.</p>
+
+          <div class="product-card__qty">
+            <button class="qty-btn" onclick="changeQty(this, -1)">↓</button>
+            <span class="qty-value">1</span>
+            <button class="qty-btn" onclick="changeQty(this, 1)">↑</button>
+          </div>
+
+          <button class="product-card__btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 2 -->
+      <div class="product-card" data-name="Lemon Cake" data-price="100" data-image="images/lemon-cake.jpg">
+        <div class="product-card__img">
+          <img src="images/lemon-cake.jpg" alt="Lemon Cake — fresh citrus sponge cake" />
+        </div>
+
+        <div class="product-card__info">
+          <h3 class="product-card__name">Lemon Cake</h3>
+          <p class="product-card__price">SEK 100</p>
+          <p class="product-card__desc">Soft sponge cake with a fresh lemon flavour.</p>
+
+          <div class="product-card__qty">
+            <button class="qty-btn" onclick="changeQty(this, -1)">↓</button>
+            <span class="qty-value">1</span>
+            <button class="qty-btn" onclick="changeQty(this, 1)">↑</button>
+          </div>
+
+          <button class="product-card__btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 3 -->
+      <div class="product-card" data-name="Cinnamon Roll" data-price="100" data-image="images/cinnamon-roll.jpg">
+        <div class="product-card__img">
+          <img src="images/cinnamon-roll.jpg" alt="Cinnamon Roll — warm spiced pastry" />
+        </div>
+
+        <div class="product-card__info">
+          <h3 class="product-card__name">Cinnamon Roll</h3>
+          <p class="product-card__price">SEK 100</p>
+          <p class="product-card__desc">Warm pastry with cinnamon, sugar, and soft dough.</p>
+
+          <div class="product-card__qty">
+            <button class="qty-btn" onclick="changeQty(this, -1)">↓</button>
+            <span class="qty-value">1</span>
+            <button class="qty-btn" onclick="changeQty(this, 1)">↑</button>
+          </div>
+
+          <button class="product-card__btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 4 -->
+      <div class="product-card" data-name="Lava Cake" data-price="100" data-image="images/tiramisu.jpg">
+        <div class="product-card__img">
+          <img src="images/tiramisu.jpg" alt="Lava Cake — warm chocolate cake" />
+        </div>
+
+        <div class="product-card__info">
+          <h3 class="product-card__name">Lava Cake</h3>
+          <p class="product-card__price">SEK 100</p>
+          <p class="product-card__desc">Warm chocolate cake with a soft melting center.</p>
+
+          <div class="product-card__qty">
+            <button class="qty-btn" onclick="changeQty(this, -1)">↓</button>
+            <span class="qty-value">1</span>
+            <button class="qty-btn" onclick="changeQty(this, 1)">↑</button>
+          </div>
+
+          <button class="product-card__btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 5 -->
+      <div class="product-card" data-name="Brownie" data-price="100" data-image="images/lemon-cake.jpg">
+        <div class="product-card__img">
+          <img src="images/lemon-cake.jpg" alt="Brownie — rich chocolate treat" />
+        </div>
+
+        <div class="product-card__info">
+          <h3 class="product-card__name">Brownie</h3>
+          <p class="product-card__price">SEK 100</p>
+          <p class="product-card__desc">Rich chocolate brownie with a soft chewy texture.</p>
+
+          <div class="product-card__qty">
+            <button class="qty-btn" onclick="changeQty(this, -1)">↓</button>
+            <span class="qty-value">1</span>
+            <button class="qty-btn" onclick="changeQty(this, 1)">↑</button>
+          </div>
+
+          <button class="product-card__btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 6 -->
+      <div class="product-card" data-name="Donut" data-price="100" data-image="images/cinnamon-roll.jpg">
+        <div class="product-card__img">
+          <img src="images/cinnamon-roll.jpg" alt="Donut — sweet bakery item" />
+        </div>
+
+        <div class="product-card__info">
+          <h3 class="product-card__name">Donut</h3>
+          <p class="product-card__price">SEK 100</p>
+          <p class="product-card__desc">Soft sweet donut, perfect for a small bakery treat.</p>
+
+          <div class="product-card__qty">
+            <button class="qty-btn" onclick="changeQty(this, -1)">↓</button>
+            <span class="qty-value">1</span>
+            <button class="qty-btn" onclick="changeQty(this, 1)">↑</button>
+          </div>
+
+          <button class="product-card__btn">Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PAGINATION -->
+    <div class="shop-pagination">
+      <button class="page-btn page-btn--arrow" id="prevPage">&#8249;</button>
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">3</button>
+      <button class="page-btn">4</button>
+      <button class="page-btn page-btn--arrow" id="nextPage">&#8250;</button>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__grid">
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Welcome to Cremè Studio</h4>
+        <p class="footer__text">
+          Cremè Studio since 2022, is dedicated to all those who love to bake and experience.
+          We invite you on a wholesome culinary adventure.
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Visit</h4>
+        <p class="footer__text">317 Pacific C Hwy<br>Huntington, CA 92648</p>
+
+        <br>
+
+        <h4 class="footer__heading">Talk</h4>
+        <p class="footer__text">123.456-7</p>
+
+        <br>
+
+        <h4 class="footer__heading">Write</h4>
+        <p class="footer__text">bake@cremestudio.com</p>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Hours</h4>
+        <p class="footer__text">
+          Monday thru Friday<br>
+          11am – 9pm<br><br>
+          Saturday/Sunday<br>
+          10am – 11pm
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">About</h4>
+        <p class="footer__text">
+          FAQ<br>
+          Reservation Policy<br>
+          Privacy Policy<br>
+          Health & Safety
+        </p>
+
+        <br>
+
+        <h4 class="footer__heading">Follow Along</h4>
+        <div class="footer__social">
+          <a href="#">IG</a>
+          <a href="#">FB</a>
+          <a href="#">TK</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2024 Cremè Studio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/shop.js"></script>
+
+</body>
+</html>
