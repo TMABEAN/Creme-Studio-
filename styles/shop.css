@@ -1,0 +1,254 @@
+/* ===== SHOP PAGE ===== */
+body {
+  background-color: var(--color-cream);
+}
+
+/* Hero */
+.shop-hero {
+  padding: 8rem 2rem 2rem;
+  text-align: center;
+  background-color: var(--color-cream);
+}
+
+.shop-hero__label {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  opacity: 0.5;
+  margin-bottom: 0.8rem;
+}
+
+.shop-hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 400;
+  color: var(--color-dark);
+}
+
+/* Tabs */
+.shop-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  padding: 1.5rem 2rem;
+  background-color: var(--color-cream);
+  border-bottom: 1px solid rgba(26, 16, 8, 0.1);
+  margin-bottom: 3rem;
+}
+
+.shop-tab {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  opacity: 0.4;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  padding-bottom: 0.3rem;
+  transition: opacity var(--transition);
+}
+
+.shop-tab:hover { opacity: 0.7; }
+
+.shop-tab--active {
+  opacity: 1;
+  border-bottom: 2px solid var(--color-dark);
+}
+
+/* Main */
+.shop-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+}
+
+/* Grid */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Product Card */
+.product-card {
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(26, 16, 8, 0.1);
+}
+
+.product-card__img {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.product-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-card__img img {
+  transform: scale(1.05);
+}
+
+.product-card__info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.product-card__name {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-dark);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.product-card__price {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: 0.5rem;
+}
+
+.product-card__desc {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--color-dark);
+  opacity: 0.6;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Quantity */
+.product-card__qty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.qty-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid #E8453C;
+  background: transparent;
+  color: #E8453C;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), color var(--transition);
+}
+
+.qty-btn:hover {
+  background: #E8453C;
+  color: #fff;
+}
+
+.qty-value {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  min-width: 24px;
+  text-align: center;
+}
+
+/* Pagination */
+.shop-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.page-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(26, 16, 8, 0.2);
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--color-dark);
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.page-btn:hover {
+  opacity: 1;
+  border-color: #E8453C;
+  color: #E8453C;
+}
+
+.page-btn.active-page {
+  background: #E8453C;
+  border-color: #E8453C;
+  color: #fff;
+  opacity: 1;
+}
+
+.page-btn--arrow {
+  border: none;
+  font-size: 1.2rem;
+  opacity: 0.4;
+}
+
+.page-btn--arrow:hover {
+  border: none;
+  color: var(--color-dark);
+}
+
+.product-card__btn{
+  margin-top: 14px;
+
+  width: 100%;
+
+  padding: 12px;
+
+  border: none;
+
+  background-color: #4F2D1E;
+
+  color: white;
+
+  font-family: 'Quicksand', sans-serif;
+
+  font-size: 14px;
+
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.product-card__btn:hover{
+  background-color: #E94F3C;
+
+  transform: translateY(-2px);
+}
